@@ -86,7 +86,7 @@
                 android:layout_marginTop="24dp"
                 android:background="#EDF2F7"
                 android:fontFamily="sans-serif"
-                android:hint="Ketik nama panggilanmu..."
+                android:hint="Ketik namamu...."
                 android:inputType="textPersonName"
                 android:paddingStart="20dp"
                 android:paddingEnd="20dp"
