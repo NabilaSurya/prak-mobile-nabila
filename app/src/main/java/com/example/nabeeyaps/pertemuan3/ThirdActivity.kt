@@ -1,5 +1,6 @@
 package com.example.nabeeyaps.pertemuan3
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
@@ -26,8 +27,9 @@ class ThirdActivity : AppCompatActivity() {
             val nomor = binding.inputNoTujuan.text.toString()
 
             if (nomor.isNotEmpty()) {
-                Toast.makeText(this, "Pesan berhasil dikirim ke: $nomor", Toast.LENGTH_SHORT
-                ).show()
+                Toast.makeText(this, "Pesan berhasil dikirim ke: $nomor", Toast.LENGTH_SHORT).show()
+                val intent = Intent(this, ThirdResultActivity::class.java)
+                startActivity(intent)
             } else {
                 Toast.makeText(this, "Nomor tidak boleh kosong", Toast.LENGTH_SHORT
                 ).show()

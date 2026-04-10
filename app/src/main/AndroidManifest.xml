@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.NabeeyAps">
         <activity
+            android:name=".pertemuan3.ThirdResultActivity"
+            android:exported="false" />
+        <activity
             android:name=".pertemuan2.SecondActivity"
             android:exported="false" />
         <activity
@@ -23,8 +26,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity"
-            android:exported="false"/>
+        <activity
+            android:name=".MainActivity"
+            android:exported="false" />
     </application>
 
 </manifest>
