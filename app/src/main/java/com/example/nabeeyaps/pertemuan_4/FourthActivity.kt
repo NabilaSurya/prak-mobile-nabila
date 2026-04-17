@@ -12,6 +12,8 @@ import com.example.nabeeyaps.MainActivity
 import com.example.nabeeyaps.R
 import com.example.nabeeyaps.databinding.ActivityFourthBinding
 import com.example.nabeeyaps.databinding.ActivityMainBinding
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
+import com.google.android.material.snackbar.Snackbar
 
 
 class FourthActivity : AppCompatActivity() {
@@ -33,6 +35,29 @@ class FourthActivity : AppCompatActivity() {
         // Set onClickListener
         binding.btnFourth.setOnClickListener {
             finish()
+        }
+        binding.btnShowSnackbar.setOnClickListener {
+            Snackbar.make(binding.root, "Ini adalah Snackbar", Snackbar.LENGTH_SHORT)
+                .setAction("Kembali"){
+                    finish()
+                    Log.e("Info Snackbar","Snackbar ditutup")
+                }
+                .show()
+        }
+        binding.btnShowAlertDialog.setOnClickListener {
+            MaterialAlertDialogBuilder(this)
+                .setTitle("Konfirmasi")
+                .setMessage("Apakah Anda yakin ingin melanjutkan?")
+                .setPositiveButton("Ya") { dialog, _ ->
+                    dialog.dismiss()
+                    finish()
+                    Log.e("Info Dialog","Anda memilih Ya!")
+                }
+                .setNegativeButton("Batal") { dialog, _ ->
+                    dialog.dismiss()
+                    Log.e("Info Dialog","Anda memilih Tidak!")
+                }
+                .show()
         }
         Log.e("onCreate", "FourthActivity dibuat pertama kali")
     }
