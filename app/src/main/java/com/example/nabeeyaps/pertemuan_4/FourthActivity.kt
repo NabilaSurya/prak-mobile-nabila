@@ -1,11 +1,8 @@
-package com.example.nabeeyaps
+package com.example.nabeeyaps.pertemuan_4
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.widget.Button
-import android.widget.EditText
-import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -13,27 +10,22 @@ import androidx.core.view.WindowInsetsCompat
 import com.example.nabeeyaps.R
 import com.example.nabeeyaps.databinding.ActivityFourthBinding
 import com.example.nabeeyaps.databinding.ActivityMainBinding
-import com.example.nabeeyaps.databinding.ActivityThirdBinding
-import com.example.nabeeyaps.pertemuan3.ThirdResultActivity
-import com.example.nabeeyaps.pertemuan_4.FourthActivity
 
 
-class MainActivity : AppCompatActivity() {
-
+class FourthActivity : AppCompatActivity() {
     private lateinit var btnToFourth: Button
-    private lateinit var binding: ActivityMainBinding
-
+    private lateinit var binding: ActivityFourthBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        binding = ActivityMainBinding.inflate(layoutInflater)
-        setContentView(binding.root)
+        binding = ActivityFourthBinding.inflate(layoutInflater)
+        setContentView(R.layout.activity_fourth)
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-        binding.btnToFourth.setOnClickListener {
+        binding.btnFourth.setOnClickListener {
             val intent = Intent(this, FourthActivity::class.java)
             startActivity(intent)
         }
