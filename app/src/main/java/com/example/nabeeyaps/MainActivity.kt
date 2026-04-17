@@ -19,10 +19,7 @@ import com.example.nabeeyaps.pertemuan_4.FourthActivity
 
 
 class MainActivity : AppCompatActivity() {
-
-    private lateinit var btnToFourth: Button
     private lateinit var binding: ActivityMainBinding
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -33,8 +30,14 @@ class MainActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+
+        // Set onClickListener
         binding.btnToFourth.setOnClickListener {
+
             val intent = Intent(this, FourthActivity::class.java)
+            intent.putExtra("nama", "Politeknik Caltex Riau")
+            intent.putExtra("asal", "Rumbai")
+            intent.putExtra("usia", 25)
             startActivity(intent)
         }
     }
