@@ -1,22 +1,24 @@
-<?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
         android:id="@+id/action_search"
-        android:title="Search"
         android:icon="@android:drawable/ic_menu_search"
+        android:title="Search"
         app:showAsAction="ifRoom" />
 
     <item
-        android:id="@+id/action_settings"
-        android:title="Settings"
-        android:icon="@android:drawable/ic_menu_preferences"
-        app:showAsAction="never" />
+        android:id="@+id/action_share"
+        android:title="Share To">
+
+        <menu>
+            <item android:id="@+id/action_wa" android:title="WhatsApp"/>
+            <item android:id="@+id/action_email" android:title="Email"/>
+        </menu>
+    </item>
 
     <item
         android:id="@+id/action_settings"
-        android:title="search"
         android:icon="@android:drawable/ic_menu_preferences"
-        app:showAsAction="never" />
+        android:title="Settings"/>
 </menu>
