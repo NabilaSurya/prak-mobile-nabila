@@ -28,6 +28,12 @@ class FourthActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+
+        setSupportActionBar(binding.toolbar)
+
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        supportActionBar?.setDisplayShowHomeEnabled(true)
+
         val name = intent.getStringExtra("nama")
         val from = intent.getStringExtra("asal")
         val age = intent.getIntExtra("usia",0)
@@ -69,5 +75,10 @@ class FourthActivity : AppCompatActivity() {
     override fun onDestroy() {
         super.onDestroy()
         Log.e("onDestroy", "FourthActivity dihapus dari stack")
+    }
+
+    override fun onSupportNavigateUp(): Boolean {
+        finish()
+        return true
     }
 }

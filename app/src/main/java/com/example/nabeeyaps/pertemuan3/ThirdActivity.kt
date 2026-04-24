@@ -23,6 +23,11 @@ class ThirdActivity : AppCompatActivity() {
         binding = ActivityThirdBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        setSupportActionBar(binding.toolbar)
+
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        supportActionBar?.setDisplayShowHomeEnabled(true)
+
         binding.btnKirim.setOnClickListener {
             val nomor = binding.inputNoTujuan.text.toString()
 
@@ -35,5 +40,9 @@ class ThirdActivity : AppCompatActivity() {
                 ).show()
             }
         }
+    }
+    override fun onSupportNavigateUp(): Boolean {
+        finish()
+        return true
     }
 }

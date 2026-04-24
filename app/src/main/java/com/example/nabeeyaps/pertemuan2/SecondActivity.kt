@@ -9,6 +9,8 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import android.view.MenuItem
+import com.example.nabeeyaps.databinding.ActivitySecondBinding
 import com.example.nabeeyaps.R
 
 class SecondActivity : AppCompatActivity() {
@@ -25,13 +27,23 @@ class SecondActivity : AppCompatActivity() {
         // Inisialisasi komponen
         val inputNama: EditText = findViewById(R.id.inputNama)
         val btnSubmit: Button = findViewById(R.id.btnSubmit)
+        val toolbar: androidx.appcompat.widget.Toolbar = findViewById(R.id.toolbar)
+        setSupportActionBar(toolbar)
 
         btnSubmit.setOnClickListener {
             //Mengambil value dari inputNama dan menampilkan di Logcat
-            val nama = inputNama.text
-            Log.e("Klik btnSubmit","Tombol berhasil di tekan. Isi dari inputNama = $inputNama")
+            val nama = inputNama.text.toString()
+            Log.e("Klik btnSubmit","Isi dari inputNama = $nama")
 
             Toast.makeText(this,"Anda telah melakukan klik pada tombol Submit", Toast.LENGTH_SHORT).show()
+
+            supportActionBar?.setDisplayHomeAsUpEnabled(true)
+            supportActionBar?.setDisplayShowHomeEnabled(true)
         }
+    }
+
+    override fun onSupportNavigateUp(): Boolean {
+        finish()
+        return true
     }
 }
