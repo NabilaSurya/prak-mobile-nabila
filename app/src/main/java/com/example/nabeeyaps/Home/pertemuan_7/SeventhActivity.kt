@@ -27,7 +27,6 @@ class SeventhActivity : AppCompatActivity() {
         setSupportActionBar(binding.toolbar)
         supportActionBar?.apply {
             title = "Activity Seven"
-            subtitle = "Ini adalah subtitle"
             setDisplayHomeAsUpEnabled(true)
             setDisplayShowHomeEnabled(true)
         }

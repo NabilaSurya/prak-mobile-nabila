@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="#74FAFF"
+    android:background="@color/white"
     tools:context=".Home.HomeFragment">
 
     <View
@@ -20,9 +20,11 @@
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        android:background="#8E24AA" />
+        android:background="#281556"
+        app:titleTextColor="@color/white"/>
 
     <!-- TODO: Update blank fragment layout -->
+
     <Button
         android:id="@+id/btnToFourth"
         android:layout_width="wrap_content"
@@ -33,7 +35,7 @@
         app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.695" />
+        app:layout_constraintVertical_bias="0.461" />
 
     <Button
         android:id="@+id/btnToSeventh"
@@ -42,8 +44,10 @@
         android:text="Seven"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.507"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.581" />
 
     <Button
         android:id="@+id/btnToNinth"
@@ -52,8 +56,10 @@
         android:text="Nine"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.507"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.692" />
 
     <Button
         android:id="@+id/btnLogout"
@@ -64,7 +70,23 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.442" />
+        app:layout_constraintVertical_bias="0.891" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="352dp"
+        android:layout_height="59dp"
+        android:fontFamily="@font/resolid_serif"
+        android:text="Selamat Datang Yakk"
+        android:textColor="#9BADDC"
+        android:textSize="35dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/btnLogout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/background_header"
+        app:layout_constraintVertical_bias="0.802" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

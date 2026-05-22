@@ -52,6 +52,7 @@ class HomeFragment : Fragment() {
             val intent = Intent(requireContext(), NinthActivity::class.java)
             startActivity(intent)
         }
+
         binding.btnLogout.setOnClickListener {
 
             AlertDialog.Builder(requireContext())

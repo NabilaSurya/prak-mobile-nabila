@@ -13,33 +13,34 @@
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         android:background="?attr/colorPrimary"
-        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar" />
+        android:backgroundTint="#281556"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:titleTextColor="@color/white"/>
 
     <TextView
         android:id="@+id/textView5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="HALOOOOOOO!!"
-        android:textStyle="bold"
-        android:textColor="#030624"
         android:fontFamily="@font/resolid_serif"
+        android:text="HALOOOOOOO!!"
+        android:textColor="#030624"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.477"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.08" />
+        app:layout_constraintVertical_bias="0.136" />
 
     <com.google.android.material.card.MaterialCardView
         android:layout_width="311dp"
         android:layout_height="311dp"
-        android:layout_marginTop="120dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.505"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="164dp"
         android:backgroundTint="#0D2054"
-        app:cardElevation="20dp">
+        app:cardElevation="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="235dp"
@@ -90,13 +91,13 @@
         android:id="@+id/btnFourth"
         android:layout_width="191dp"
         android:layout_height="51dp"
-        android:text="Back"
         android:backgroundTint="#281556"
+        android:text="Back"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.75" />
+        app:layout_constraintVertical_bias="0.782" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
