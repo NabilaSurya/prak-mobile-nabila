@@ -1,4 +1,4 @@
-package com.example.nabeeyaps.pertemuan3
+package com.example.nabeeyaps.Home.pertemuan3
 
 import android.content.Intent
 import android.os.Bundle
@@ -7,7 +7,6 @@ import android.widget.EditText
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import com.example.nabeeyaps.R
 import com.example.nabeeyaps.databinding.ActivityThirdBinding
 
 class ThirdActivity : AppCompatActivity() {

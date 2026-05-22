@@ -1,8 +1,10 @@
-package com.example.nabeeyaps.pertemuan_5
+package com.example.nabeeyaps.Home.pertemuan_5
 
+import android.R
 import android.os.Bundle
 import android.view.MenuItem
 import android.view.View
+import android.webkit.WebView
 import android.webkit.WebViewClient
 import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.app.AppCompatActivity
@@ -26,7 +28,7 @@ class WebViewActivity : AppCompatActivity() {
 
         // ✅ WebView
         binding.webView.webViewClient = object : WebViewClient() {
-            override fun onPageFinished(view: android.webkit.WebView?, url: String?) {
+            override fun onPageFinished(view: WebView?, url: String?) {
                 binding.progressBar.visibility = View.GONE
             }
         }
@@ -47,7 +49,7 @@ class WebViewActivity : AppCompatActivity() {
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        if (item.itemId == android.R.id.home) {
+        if (item.itemId == R.id.home) {
             finish()
         }
         return true

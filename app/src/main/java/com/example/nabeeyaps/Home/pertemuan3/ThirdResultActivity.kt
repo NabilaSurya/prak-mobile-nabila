@@ -1,4 +1,4 @@
-package com.example.nabeeyaps.pertemuan3
+package com.example.nabeeyaps.Home.pertemuan3
 
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge

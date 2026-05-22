@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:background="#013B73"
 
-    tools:context=".pertemuan3.ThirdResultActivity">
+    tools:context=".Home.pertemuan3.ThirdResultActivity">
 
     <TextView
         android:id="@+id/textView3"

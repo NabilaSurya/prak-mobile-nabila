@@ -1,4 +1,4 @@
-package com.example.nabeeyaps.pertemuan2
+package com.example.nabeeyaps.Home.pertemuan2
 
 import android.os.Bundle
 import android.util.Log
@@ -10,6 +10,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import android.view.MenuItem
+import androidx.appcompat.widget.Toolbar
 import com.example.nabeeyaps.databinding.ActivitySecondBinding
 import com.example.nabeeyaps.R
 
@@ -27,7 +28,7 @@ class SecondActivity : AppCompatActivity() {
         // Inisialisasi komponen
         val inputNama: EditText = findViewById(R.id.inputNama)
         val btnSubmit: Button = findViewById(R.id.btnSubmit)
-        val toolbar: androidx.appcompat.widget.Toolbar = findViewById(R.id.toolbar)
+        val toolbar: Toolbar = findViewById(R.id.toolbar)
         setSupportActionBar(toolbar)
 
         btnSubmit.setOnClickListener {
