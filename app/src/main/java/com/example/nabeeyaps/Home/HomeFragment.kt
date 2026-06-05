@@ -9,11 +9,15 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.lifecycleScope
 import com.example.nabeeyaps.AuthActivity
 import com.example.nabeeyaps.Home.pertemuan_4.FourthActivity
 import com.example.nabeeyaps.Home.pertemuan_7.SeventhActivity
 import com.example.nabeeyaps.Home.pertemuan_9.NinthActivity
+import com.example.nabeeyaps.Home.pertemuan_10.TenthActivity
+import com.example.nabeeyaps.data.api.CatFactApiClient
 import com.example.nabeeyaps.databinding.FragmentHomeBinding
+import kotlinx.coroutines.launch
 
 
 class HomeFragment : Fragment() {
@@ -52,6 +56,11 @@ class HomeFragment : Fragment() {
             val intent = Intent(requireContext(), NinthActivity::class.java)
             startActivity(intent)
         }
+        binding.btnToTenth.setOnClickListener {
+
+            val intent = Intent(requireContext(), TenthActivity::class.java)
+            startActivity(intent)
+        }
 
         binding.btnLogout.setOnClickListener {
 
@@ -71,6 +80,20 @@ class HomeFragment : Fragment() {
                 }
                 .setNegativeButton("Tidak", null)
                 .show()
+        }
+        loadCatFact()
+        binding.btnRefresh.setOnClickListener {
+            loadCatFact()
+        }
+    }
+    private fun loadCatFact() {
+        lifecycleScope.launch {
+            try {
+                val response = CatFactApiClient.apiService.getCatFact()
+                binding.tvCatFact.text = "\"${response.fact}\""
+            } catch (e: Exception) {
+                binding.tvCatFact.text = "Gagal mengambil fakta kucing."
+            }
         }
     }
 
