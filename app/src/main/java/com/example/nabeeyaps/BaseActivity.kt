@@ -10,6 +10,7 @@ import androidx.fragment.app.Fragment
 import com.example.nabeeyaps.Home.HomeFragment
 import com.example.nabeeyaps.Message.MessageFragment
 import com.example.nabeeyaps.More.MoreFragment
+import com.example.nabeeyaps.Note.NoteFragment
 import com.example.nabeeyaps.databinding.ActivityBaseBinding
 
 
@@ -40,6 +41,10 @@ class BaseActivity : AppCompatActivity() {
                 }
                 R.id.more -> {
                     replaceFragment(MoreFragment())
+                    true
+                }
+                R.id.note -> {
+                    replaceFragment(NoteFragment())
                     true
                 }
                 else -> false // return false jika item tidak ada yang di klik
