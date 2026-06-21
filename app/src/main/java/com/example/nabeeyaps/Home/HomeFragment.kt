@@ -17,6 +17,7 @@ import com.example.nabeeyaps.Home.pertemuan_4.FourthActivity
 import com.example.nabeeyaps.Home.pertemuan_7.SeventhActivity
 import com.example.nabeeyaps.Home.pertemuan_9.NinthActivity
 import com.example.nabeeyaps.Home.pertemuan_10.TenthActivity
+import com.example.nabeeyaps.Home.pertemuan_13.ThirteenthActivity
 import com.example.nabeeyaps.Home.photo.PhotoAdapter
 import com.example.nabeeyaps.data.api.CatFactApiClient
 import com.example.nabeeyaps.data.api.PhotoApiClient
@@ -63,6 +64,11 @@ class HomeFragment : Fragment() {
         binding.btnToTenth.setOnClickListener {
 
             val intent = Intent(requireContext(), TenthActivity::class.java)
+            startActivity(intent)
+        }
+        binding.btnToThirtteenth.setOnClickListener {
+
+            val intent = Intent(requireContext(), ThirteenthActivity::class.java)
             startActivity(intent)
         }
 
