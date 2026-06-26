@@ -1,23 +1,37 @@
 package com.example.nabeeyaps.Home.pertemuan_4
 
+import android.Manifest
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.example.nabeeyaps.Home.pertemuan3.ThirdResultActivity
 import com.example.nabeeyaps.MainActivity
 import com.example.nabeeyaps.R
 import com.example.nabeeyaps.databinding.ActivityFourthBinding
 import com.example.nabeeyaps.databinding.ActivityMainBinding
+import com.example.nabeeyaps.utils.NotificationHelper
+import com.example.nabeeyaps.utils.PermissionHelper
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.android.material.snackbar.Snackbar
 
 
 class FourthActivity : AppCompatActivity() {
     private lateinit var binding: ActivityFourthBinding
+    private val notificationPermissionLauncher =
+        registerForActivityResult(ActivityResultContracts.RequestPermission()) { isGranted ->
+            if (isGranted) {
+                Toast.makeText(this, "Notifikasi diizinkan", Toast.LENGTH_SHORT).show()
+            } else {
+                Toast.makeText(this, "Notifikasi ditolak", Toast.LENGTH_SHORT).show()
+            }
+        }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -27,6 +41,15 @@ class FourthActivity : AppCompatActivity() {
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
+        }
+        if (PermissionHelper.isNotificationPermissionRequired()) {
+            val permission = Manifest.permission.POST_NOTIFICATIONS
+            if (!PermissionHelper.hasPermission(this, permission)) {
+                PermissionHelper.requestPermission(
+                    notificationPermissionLauncher,
+                    permission
+                )
+            }
         }
 
         setSupportActionBar(binding.toolbar)
@@ -49,6 +72,14 @@ class FourthActivity : AppCompatActivity() {
                     Log.e("Info Snackbar","Snackbar ditutup")
                 }
                 .show()
+            val intent = Intent(this, FourthResultActivity::class.java)
+            startActivity(intent)
+            NotificationHelper.showNotification(
+                this, //Jika panggil di fragment maka requireContext()
+                "Pesanan Anda",
+                "Halo, Snackbar Berhasil",
+                intent
+            )
         }
         binding.btnShowAlertDialog.setOnClickListener {
             MaterialAlertDialogBuilder(this)

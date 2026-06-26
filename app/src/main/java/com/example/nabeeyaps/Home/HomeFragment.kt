@@ -13,6 +13,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.nabeeyaps.AuthActivity
+import com.example.nabeeyaps.Home.pertemuan3.ThirdActivity
 import com.example.nabeeyaps.Home.pertemuan_4.FourthActivity
 import com.example.nabeeyaps.Home.pertemuan_7.SeventhActivity
 import com.example.nabeeyaps.Home.pertemuan_9.NinthActivity
@@ -38,7 +39,6 @@ class HomeFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        (requireActivity() as AppCompatActivity).setSupportActionBar(binding.toolbar)
         (requireActivity() as AppCompatActivity).supportActionBar?.apply {
             title = "Home"
         }
@@ -54,6 +54,11 @@ class HomeFragment : Fragment() {
         binding.btnToSeventh.setOnClickListener {
 
             val intent = Intent(requireContext(), SeventhActivity::class.java)
+            startActivity(intent)
+        }
+        binding.btnToThird.setOnClickListener {
+
+            val intent = Intent(requireContext(), ThirdActivity::class.java)
             startActivity(intent)
         }
         binding.btnToNinth.setOnClickListener {
